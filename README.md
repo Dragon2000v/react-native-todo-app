@@ -57,9 +57,9 @@ npm start
 This will start the Expo development server. You can then open the app on an
 emulator or a physical device using the Expo Go app.
 
-### Screens
+## Screens
 
-## Login
+### Login
 
 The Login.tsx screen allows users to sign up and sign in using their email and
 password. It utilizes Firebase Authentication for handling the user
@@ -68,23 +68,23 @@ authentication.
 - Sign Up: Creates a new user account with an email and password.
 - Sign In: Authenticates an existing user with an email and password.
 
-## List
+### List
 
 The List.tsx screen displays a list of to-do items. Users can view their tasks
 and navigate to the details screen for more information on each task.
 
-## Details
+### Details
 
 The Details.tsx screen provides detailed information about a selected task.
 Users can view task details and make updates if needed.
 
-### Firebase Setup
+## Firebase Setup
 
 Ensure that you have set up Firebase correctly and initialized it in your app.
 You should have a Firebase configuration file (firebaseConfig.ts) in your
 project.
 
-Dependencies
+# Dependencies
 
 - React Native
 - Firebase Authentication Check the package.json for a complete list of
