@@ -1,12 +1,23 @@
 import { View, Text, StyleSheet, TextInput, Button } from 'react-native';
 import React, { useState } from 'react';
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  signInWithEmailAndPassword,
+} from 'firebase/auth';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const signUp = async () => {};
-  const signIn = async () => {};
+  const auth = getAuth();
+  const signUp = async () => {
+    const after = await createUserWithEmailAndPassword(auth, email, password);
+    alert('Check your email!');
+  };
+  const signIn = async () => {
+    const user = await signInWithEmailAndPassword(auth, email, password);
+  };
   return (
     <View style={styles.container}>
       <TextInput
@@ -33,9 +44,11 @@ export default Login;
 const styles = StyleSheet.create({
   container: {
     marginHorizontal: 20,
+    flexDirection: 'column',
+    paddingVertical: 20,
   },
   input: {
-    flex: 1,
+    marginVertical: 4,
     height: 50,
     borderWidth: 1,
     borderRadius: 4,
